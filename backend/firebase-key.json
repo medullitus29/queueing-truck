@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "queueing-truck-916d0",
+  "private_key_id": "b1b943370d461b3a98b903b3bd3aacbc7908301d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDTXQiMqA0KRjWk\nV+B0e+LQsQeOUu3GOwv57wT/CluQRBwdLqeu6QyMNl3Lj6d8aJye99HuG8TFvxeh\nh9BP6GKR1XPu2BJKFMdRgiS7esdQsy3i6Rq/ObmEEfYTCXZaBeaykMeIXuT/VXRU\nHTeSP513H8IfFQ6Kd2t71/vzVjDWZFNpIHRWVvENXA5qG8u5aB6Okl8PRkVV23e4\nntMenf/PhuRK/qsjXc91QWfEwWHgfSt5aicaO69lyyCYand/9yjF1eBowshluj2/\nNb3fpmaZDrogUyUjvZa89pEzByu5apt2fZDUuF0qX5iDpoxUDOmLMLdG2vsydEUd\nKB1kEyEvAgMBAAECggEAIitd80tEVxRe81NnjGfuFOSBqbRmDyVtkWQJhTzvQi/Y\nnFkgr59VBs0lNariyIiARWzKieQAWCLv7DkGErJT+RUuZFRBr1Xo8Rgz3avYJrIz\nfrBGQYLQpyALjYFP76FuQxDdHlfk972gtuvFl5rkLHq8XwUARZ9Psi+KYjOID/3Q\nQh/mHs2ux2u7W5cywu0jhzW3xZO9RlZqneC6617Sva8KnHe9gi0rw5XVIQnTTPBb\nKL5Wv+FHnfh9cHqRvjxsQ4HQVdlNkZr3JTCeRbvl0uzofU6jrngqE14c7oPdzO68\n+Vw6pcnvz+hR7hQ4fHsGIY76AZ4gykjuIJpn2+kXCQKBgQD+P2DVD8QPgF/+RLDg\nfVvk5nRJKE6NaYlMoarinUu5hJDFZIrwArLOorJ01YlyqefnarWGrC7JOm6lZCAP\n1t9j4WdqKlCX4ussBhcTV2Bx90ZEqjubbzktUhW57CF6Hc7lN6znz0SnxiqZ1Ugi\nG6HK1TeV18unoWecxFRRA/mISQKBgQDU0fxYYJsVEjnElu/RQrolQ1Qwu1h6RSR9\nY4pTOTrmAyOSW4Yn1nOuGWjCNZwQig+9g1Kt4ht1C6lEvwt73olqGTqsQ4l57n5E\nXlN2bMm/7/W+8F9RTHXN6NNwgoHtJD9cNnMqmwRmike9saOjuQlOe4l8NPUVe4sX\nVm82wI8NtwKBgFQ9B4ZQbPN941BJzhjzMAlNWeYLVst/1h/vyMDAwSA8jgL45xfS\nrQ/N1DblsV6ucMm6D18JmY7Or25ZGE5nMSjUvADu+Dj61FSHyAl+f9QCy+NgS9Oa\nLGWZtt0dIZJmYfCMW9uKTwMPo3nIsteqNBcSQhKBp1ZpIf1NB2q4WGsRAoGAFp7z\nSZmLImQ7i6/XcdC75HYRntRrBSQQStunukzc+9HdmBLuYZGj3h+JSQtVuVRTc/tf\ncGgWLwy8QzhjShlPVd20pNbQ6Ar3lODJ0k6h6yrgXhlCqGuOIgLbZpwYn1I5Ad4v\nw5mSkCumkH0vPZnPaW4sIO2oF054bFSdoZ46FmUCgYEAqjGkD+ubGANJsNYUq3k9\n28wq+BDcffRbdnwsMIbKNPU4IA6+Mt7h4D4N5RjFd1gxxROoTyWhSoAuDDjz6djV\nopIfU8K7WUtPhwMMxYCIPc64W2t9vDlwaLJ4tN6LaFSHTXCBmQb8q0K0rDNCIPh3\nVoszJD3FM4DktETlc+5cn00=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@queueing-truck-916d0.iam.gserviceaccount.com",
+  "client_id": "113586683930918533252",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40queueing-truck-916d0.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
