@@ -29,24 +29,54 @@ def read_excel_safely(path):
         temp_dir = tempfile.gettempdir()
         temp_path = os.path.join(temp_dir, "temp_excel_copy.xlsx")
         shutil.copy2(path, temp_path)
-        df = pd.read_excel(temp_path, sheet_name="Summarized Plan", engine="openpyxl")
-        return df
+
+        # 🔹 Read WITHOUT header
+        df_raw = pd.read_excel(
+            temp_path,
+            sheet_name="Summarized Plan",
+            header=None,
+            engine="openpyxl"
+        )
+
+        return df_raw
+
     except Exception as e:
         print("Excel read error:", e)
         return None
+
+# ================= FIND HEADER ROW =================
+def find_header_row(df_raw):
+    for i in range(len(df_raw)):
+        row_values = df_raw.iloc[i].astype(str).str.upper().str.strip()
+
+        if "SHIPMENT" in row_values.values:
+            return i  # Found header row
+
+    return None  # Not found
 
 # ================= MAIN LOOP =================
 while True:
     try:
         print("\nChecking Excel...")
 
-        df = read_excel_safely(EXCEL_FILE)
-        if df is None:
+        df_raw = read_excel_safely(EXCEL_FILE)
+        if df_raw is None:
             time.sleep(CHECK_INTERVAL)
             continue
 
+        # 🔹 Detect header row
+        header_row = find_header_row(df_raw)
+
+        if header_row is None:
+            print("Header row not found.")
+            time.sleep(CHECK_INTERVAL)
+            continue
+
+        # 🔹 Rebuild dataframe with correct header
+        df = df_raw.iloc[header_row + 1:].copy()
+        df.columns = df_raw.iloc[header_row].astype(str).str.strip().str.upper()
+
         df = df.where(pd.notnull(df), None)
-        df.columns = df.columns.str.strip().str.upper()
 
         # Force STATUS column at index 15 (column P) if needed
         cols = list(df.columns)
@@ -77,7 +107,6 @@ while True:
                 raw_status = row.get("STATUS")
 
                 # ================= REMOVAL LOGIC =================
-                # If STATUS has ANY value (especially 1), remove from queue and mark processed
                 status_has_value = (
                     raw_status is not None and
                     not (isinstance(raw_status, float) and pd.isna(raw_status)) and
@@ -90,10 +119,9 @@ while True:
                         queue_ref.child(order_id).delete()
                         processed_ref.child(order_id).set(True)
                         print(f"Removed & processed: {order_id} (STATUS = {raw_status})")
-                    continue  # Don't re-add it
+                    continue
 
                 # ================= ADD LOGIC =================
-                # Only add if vendor matches AND status is empty
                 if TARGET_VENDOR.lower() in vendor.lower():
                     plate = sanitize_value(row.get("PLATE"), "")
                     new_data = {
