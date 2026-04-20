@@ -148,6 +148,9 @@ function App() {
                   <th style={{ padding: "10px", border: "1px solid black" }}>
                     Plate No.
                   </th>
+                  <th style={{ padding: "10px", border: "1px solid black" }}>
+                    Docking No.
+                  </th>
                 </tr>
               </thead>
             </table>
@@ -170,14 +173,17 @@ function App() {
                 <tbody>
                   {queue.map((item, index) => (
                     <tr key={index}>
-                      <td style={{ padding: "10px", width: "33.33%", border: "1px solid black" }}>
+                      <td style={{ padding: "10px", width: "25%", border: "1px solid black" }}>
                         {item.number}
                       </td>
-                      <td style={{ padding: "10px", width: "33.33%", border: "1px solid black" }}>
+                      <td style={{ padding: "10px", width: "25%", border: "1px solid black" }}>
                         {item.vendor}
                       </td>
-                      <td style={{ padding: "10px", width: "33.33%", border: "1px solid black" }}>
+                      <td style={{ padding: "10px", width: "25%", border: "1px solid black" }}>
                         {item.plate}
+                      </td>
+                      <td style={{ padding: "10px", width: "25%", border: "1px solid black" }}>
+                        {item.docking}
                       </td>
                     </tr>
                   ))}
